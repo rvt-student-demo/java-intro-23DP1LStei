@@ -8,7 +8,7 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("First points: ");
+        System.out.println("Your points: ");
         int points = Integer.valueOf(scanner.nextLine());
         if (points<0) {
             System.out.println("Impossible!");
@@ -23,9 +23,9 @@ public class App
         } else if (points<90) {
             System.out.println("4");
         } else if (points<101) {
-            System.out.println("incredible!");
+            System.out.println("5!");
         } else {
-
+            System.out.println("incredible!");
         }
     }
 
