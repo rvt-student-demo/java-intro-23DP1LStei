@@ -8,20 +8,25 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("First number: ");
-        int number1 = Integer.valueOf(scanner.nextLine());
+        System.out.println("First points: ");
+        int points = Integer.valueOf(scanner.nextLine());
+        if (points<0) {
+            System.out.println("Impossible!");
+        } else if (points<50) {
+            System.out.println("failed");
+        } else if (points<60) {
+            System.out.println("1");
+        } else if (points<70) {
+            System.out.println("2");
+        } else if (points<80) {
+            System.out.println("3");
+        } else if (points<90) {
+            System.out.println("4");
+        } else if (points<101) {
+            System.out.println("incredible!");
+        } else {
 
-        
-        System.out.println("Second number: ");
-        int number2 = Integer.valueOf(scanner.nextLine());
-
-        if (number1 > number2) {
-            System.out.println("The greatest number is: " + number1);
-        } else if (number1 < number2) {
-            System.out.println("The greatest number is: " + number2);
-        } else { 
-            System.out.println("Two numbers are equal.");
-        } 
+        }
     }
 
 }
