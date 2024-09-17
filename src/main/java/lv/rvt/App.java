@@ -7,18 +7,21 @@ public class App
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What's your name?: ");
-        String name = scanner.nextLine();
 
+        System.out.println("First number: ");
+        int number1 = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("What's your last name?: ");
-        String lastname = scanner.nextLine();
+        
+        System.out.println("Second number: ");
+        int number2 = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("What's your group?: ");
-        String group = scanner.nextLine();
-
-
-        System.out.println("Student: " + name + " " + lastname + ", group: " + group);
+        if (number1 > number2) {
+            System.out.println("The greatest number is: " + number1);
+        } else if (number1 < number2) {
+            System.out.println("The greatest number is: " + number2);
+        } else { 
+            System.out.println("Two numbers are equal.");
+        } 
     }
 
 }
