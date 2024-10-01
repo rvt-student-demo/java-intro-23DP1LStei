@@ -2,31 +2,43 @@ package lv.rvt;
 
 import java.util.Scanner;
 
-public class App 
-{
+public class App {
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Your points: ");
-        int points = Integer.valueOf(scanner.nextLine());
-        if (points<0) {
-            System.out.println("Impossible!");
-        } else if (points<50) {
-            System.out.println("failed");
-        } else if (points<60) {
-            System.out.println("1");
-        } else if (points<70) {
-            System.out.println("2");
-        } else if (points<80) {
-            System.out.println("3");
-        } else if (points<90) {
-            System.out.println("4");
-        } else if (points<101) {
-            System.out.println("5!");
-        } else {
-            System.out.println("incredible!");
+        System.out.println("Give numbers: ");
+        int summa = 0;
+        int skaitlis = 0;
+        int sksk = 0;
+        int even = 0;
+        int odd = 0;
+
+        while (true) { 
+            skaitlis = Integer.valueOf(scanner.nextLine());
+            if (skaitlis != -1) {
+                summa = summa + skaitlis;
+                sksk = sksk +1;
+                if (skaitlis%2 == 0) {
+                    even = even + 1;
+                } else {
+                    odd = odd + 1;
+                }
+            } else {
+                break;
+            }
         }
+        System.out.println("Thx! Bye!");
+        System.out.println("Sum: " + summa);
+        System.out.println("Numbers: " + sksk);
+        double average = (double)summa/sksk;
+        System.out.println("Average: " + average);
+        System.out.println("Even: " + even);
+        System.out.println("Odd: " + odd);
+
+        
+
     }
+    
 
 }
