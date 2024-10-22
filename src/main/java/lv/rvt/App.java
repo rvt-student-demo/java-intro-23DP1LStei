@@ -1,81 +1,53 @@
 package lv.rvt;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
-    public static void printStars(int number) {
-        for (int i = 0; i < number; i++) {
-            System.out.print("*");
-        }
-        System.out.println("");
-    }
-
-    public static void printSquare(int size) {
-        System.out.println("");
-        for (int i = 0; i < size; i++) {
-            System.out.println("***");
-        }
-    }
-
-
-    public static void printRectangle(int width, int height) {
-        System.out.println("");
-        for (int i = 0; i < height; i++) {
-            printStars(width);
-        }
-    }
-
-    public static void printTriangle(int size) {
-        System.out.println("");
-        for (int i = 0; i < size; i++) {
-            printStars(i+1);
-        }
-        
-    }
-    
-
-    public static void printSpaces(int number){
-        for (int i = 0; i < number; i++) {
-            System.out.print(" ");
-        }
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
         
 
-    }
+        while (true) { 
+            numbers.add(Integer.valueOf(scanner.nextLine()));
 
-    public static void printTriangle2(int size) {
-        System.out.println();
-        for (int i = 0; i < size; i++) {
-            printSpaces(size-i-1);
-            printStars(i+1);
-        }
-    }
-
-
-
-    public static void christmasTree(int height) {
-        System.out.println();
-        for (int i = 0; i < height; i++) {
-            printSpaces(height-i-1);
-            printStars(1+i*2);
-        }
-        for (int i = 0; i < 2; i++) {
-            printSpaces(height-2);
-            printStars(3);
+            if (numbers.get(numbers.size()-1) == -1) {
+                break;
+            }
+                
+            
             
         }
-    }
-    public static void main(String[] args) {
-        printStars(5);
-        printStars(3);
-        printStars(9);
+        System.out.println(numbers);
         
-        printSquare(5);
+        int from_where = 0;
+        while (true) { 
+            System.out.print("From where? ");
+            from_where = Integer.valueOf(scanner.nextLine());
+            if (from_where>=0 && from_where<numbers.size()) {
+                break;
+            } else {
+                System.out.println("Enter the valid index. ");
+            }
+        }
 
-        printRectangle(10, 4);
 
-        printTriangle(5);
+        int to_where = 0;
+        while (true) { 
+            System.out.print("To where? ");
+            to_where = Integer.valueOf(scanner.nextLine());
+            if (to_where>=0 && to_where<numbers.size()) {
+                break;
+            } else {
+                System.out.println("Enter the valid index. ");
+            }
+        }
+        
+        for (int i = from_where; i <= to_where; i++) {
+            System.out.println(numbers.get(i));
+            
+        }
 
-        printTriangle2(5);
-
-
-        christmasTree(10);
+        
     }
 }
